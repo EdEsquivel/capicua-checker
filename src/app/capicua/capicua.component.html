@@ -1,1 +1,9 @@
-<p>capicua works!</p>
+<div>
+    <label for="numberInput">Ingresa un número:</label>
+    <input id="numberInput" type="text" [(ngModel)]="inputNum" (input)="checkCapicua()" />
+  </div>
+  <div *ngIf="esCapicua !== null">
+    <p *ngIf="esCapicua; else notCapicua">El número ingresado es capicúa</p>
+    <ng-template #notCapicua><p>El número ingresado no es capicúa.</p></ng-template>
+  </div>
+  
